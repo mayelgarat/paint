@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="icon" type="image/x-icon" href="/img/android-chrome-192x192.png">
+    <title>Paint</title>
+</head>
+
+<body onload="init()">
+
+    <h1>Mister Canvas</h1>
+    <div class="canvas-container">
+        <h3>Painting</h3>
+        <form class="buttons-container">
+            <div>
+                <input class="color" type="color" name="fill-color">
+                <input class="color" type="color" name="stroke-color">
+                <select class="shape-select" name="shape" id="shape-select">
+                    <option value="square">SQUARES</option>
+                    <option value="circle">CIRCLE</option>
+                </select>
+                <button class="save-btn" onclick="onSave(event, this.form)">SAVE</button>
+                <button class="clear-btn" onclick="clearCanvas(event)">CLEAR</button>
+                <button class="about-btn">ABOUT</button>
+                <button class="download-btn"><a href="#" onclick="downloadCanvas(this)">Download</a></button>
+            </div>
+
+
+        </form>
+    </div>
+    <canvas id="my-canvas" height="600" width="850" ontouchmove="draw(event)" onclick="draw(event)"></canvas>
+    </div>
+    <div class="footer">
+
+        <input type="file" class="file-input btn" name="image" onchange="onImgInput(event)" />
+
+        <button class="btn" onclick="uploadImg()">Share to Facebook</button>
+        <p class="user-msg"></p>
+        <div class="share-container"></div>
+    </div>
+
+
+    <script src="/js/controller.js"></script>
+</body>
+
+</html>
